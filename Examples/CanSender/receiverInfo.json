@@ -1,0 +1,11 @@
+{
+  "canInfo": {
+    "serialPort": "vcan0",
+    "busType": "socketcan",
+    "bitrate": 500000,
+    "busFilters": [
+      {
+      }
+    ]
+  }
+}
