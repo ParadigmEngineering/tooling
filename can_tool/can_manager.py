@@ -37,7 +37,7 @@ class CanManager:
     """
 
     def __init__(self, bus_name: str, message_frequency: float) -> None:
-        self.bus = can.interfaces.socketcan.SocketcanBus(channel=bus_name)
+        self.bus = can.Bus(channel=bus_name, interface='socketcan')
         self.messages = {}
         self.message_frequency = message_frequency
 
@@ -123,7 +123,7 @@ if __name__ == "__main__":
 
     This test case makes use of the canSender program, see README for instructions
     """
-    bus = CanManager('vcan0')
+    bus = CanManager('vcan0', 5)
     bus.read_message_config('dts', 'example_message_config.json')
 
     # Print SensorReading objects
