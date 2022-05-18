@@ -21,3 +21,14 @@ The `can-receiver.py` script and accompanying receiverInfo.json file can be used
 - Ensure that the canable has the jumpers in the correct configuration, the jumper labelled boot should be on the two pins closest to the wire header, and if the terminating resistor is required, it too should have the jumper on the two pins closest to the wire header.
 
 - In a command prompt/terminal, navigate to the Examples foler, and run `python can-receiver.py`, the program should begin to receive any messages on the can bus that are within the can filtering, and write their information to a file called `messages.txt`
+
+# Configuring CAN in Linux 
+[Instructions](https://elinux.org/Bringing_CAN_interface_up#Introduction)
+
+Long story short:
+```
+sudo modprobe vcan
+sudo ip link add dev vcan0 type vcan
+sudo ip link set up vcan0
+sudo apt-get install can-utils
+```
